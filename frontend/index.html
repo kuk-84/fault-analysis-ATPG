@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- BOOTSTRAP STUFF -->
+	<meta charset="utf-8">
+	<meta name="author" content="drendog">
+	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="simulator/css/simstyle.css">
+	<script src="vendor/js/jquery-3.3.1.slim.min.js"></script>
+	<script src="vendor/js/popper.min.js"></script>
+	<script src="vendor/js/bootstrap.min.js"></script>
+	<!-- p5 stuff -->
+	<script src="vendor/js/p5.min.js"></script>
+	<!-- Simulator stuff -->
+	<script type="module" src="simulator/js/simulator.js"></script>
+	<title>Circuit Simulator</title>
+</head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<div class="navGroupTools">
+						<button type="button" class="btn btn-outline-light Edit active" tool="Edit"
+							onclick="activeTool(this)">
+							<i class="fa fa-edit"></i>
+							Edit
+						</button>
+						<button type="button" class="btn btn-outline-light" tool="Delete" onclick="activeTool(this)"">
+              				<i class=" fa fa-trash-o"></i>
+							Delete
+						</button>
+					</div>
+					<div class="navGroupTools">
+						<a download="LogicCircuit00" href="#" id="saveProjectFile">
+							<button type="button" class="btn btn-outline-light">
+								<i class="fa fa-save"></i>
+								Save
+							</button>
+						</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- Begin page content -->
+
+	<div class="container-fluid pt-3">
+		<div class="row">
+			<div class="tools col-0 ml-3 pr-0 overflow-scroll" style="overflow-y: scroll;height: calc(100vh - 5rem);">
+				<div class="list-group float-right" style="min-width: 50px; max-width: 60px">
+					<button type="button" tool="LogicInput" title="Logic Input" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/LogicInput.svg" class="ml-2" width="32">
+					</button>
+					<button type="button" tool="LogicOutput" title="Logic Output" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/LogicOutput.svg" class="ml-2" width="32">
+					</button>
+					<button type="button" tool="NOT" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/NOT.svg" width="50">
+					</button>
+					<button type="button" tool="AND" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/AND.svg" width="50">
+					</button>
+					<button type="button" tool="NAND" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/NAND.svg" width="50">
+					</button>
+				</div>
+			</div>
+			<div class="col-10 pl-0">
+				<!-- Simulator Canvas -->
+				<div id="canvas-sim"></div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
