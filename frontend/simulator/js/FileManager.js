@@ -1,6 +1,7 @@
-import { logicInput, logicOutput, gate, wireMng } from "./simulator.js"
+import { logicInput, logicOutput, gate, flipflop, logicClock, srLatch, wireMng } from "./simulator.js"
 import { LogicInput } from "./circuit_components/LogicInput.js"
 import { LogicOutput } from "./circuit_components/LogicOutput.js";
+import { Clock } from "./circuit_components/Clock.js";
 import { Gate } from "./circuit_components/Gate.js";
 import { nodeList } from "./circuit_components/Node.js";
 
@@ -41,8 +42,11 @@ export class FileManager {
     loadFile(e) {
         this.isLoadingState = true;
 
+        flipflop.splice(0, flipflop.length);
+        srLatch.splice(0, srLatch.length);
         gate.splice(0, gate.length);
         wireMng.wire.splice(0, wireMng.wire.length);
+        logicClock.splice(0, logicClock.length);
         logicInput.splice(0, logicInput.length);
         logicOutput.splice(0, logicOutput.length);
         nodeList.splice(0, nodeList.length);
@@ -65,7 +69,7 @@ export class FileManager {
                     if (objectParsed == undefined)
                         break;
 
-                    console.log(objectParsed);
+                    console.log("lm",objectParsed);
                     logicInput.push(new LogicInput());
                     Object.assign(logicInput[i], objectParsed);
                     logicInput[i].refreshNodes();
@@ -88,7 +92,20 @@ export class FileManager {
                 }
             }
 
-            
+            if ("logicClock" in JSON.parse(contentFile)) {
+                for (let i = 0; i < contentFile.length; i++) {
+
+                    let objectParsed = JSON.parse(contentFile).logicClock[i];
+
+                    if (objectParsed == undefined)
+                        break;
+
+                    console.log(objectParsed);
+                    logicClock.push(new Clock());
+                    Object.assign(logicClock[i], objectParsed);
+                    logicClock[i].refreshNodes();
+                }
+            }
 
             if ("gate" in JSON.parse(contentFile)) {
                 for (let i = 0; i < contentFile.length; i++) {
@@ -104,8 +121,6 @@ export class FileManager {
                     gate[i].refreshNodes();
                 }
             }
-
-            
 
             
 
@@ -148,7 +163,10 @@ export class FileManager {
 
         workspace["logicInput"] = logicInput;
         workspace["logicOutput"] = logicOutput;
+        workspace["flipflop"] = flipflop;
+        workspace["logicClock"] = logicClock;
         workspace["gate"] = gate;
+        workspace["srLatch"] = srLatch;
         workspace["wire"] = wireMng.wire;
 
         let jsonWorkspace = JSON.stringify(workspace,
@@ -167,14 +185,21 @@ export class FileManager {
                     case "nodeNotQ":
                     case "andGate_NotQ":
                     case "andGate_Q":
+                    case "ff_D":
+                    case "orGate":
                     case "gateSet":
                     case "gateReset":
+                    case "asyncLatch":
+                    case "master":
+                    case "slave":
+                    case "srLatchSync":
                     case "startNode":
                     case "endNode":
                         return undefined;
                 }
 
                 // other things which is not possible to export on JSON
+                //console.log("manya",value);
                 return value;
             }, '\t');
         return jsonWorkspace;

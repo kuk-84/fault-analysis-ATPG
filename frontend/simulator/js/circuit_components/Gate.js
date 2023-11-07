@@ -12,8 +12,11 @@ import { FileManager } from "../FileManager.js";
 export class Gate {
     constructor(strType) {
         this.strType = strType;
+        //console.log(this.strType);
         this.type = this.convertToType(strType);
+        //console.log(this.type);
         this.width = gateIMG[this.type].width;
+        //console.log(this.width);
         this.height = gateIMG[this.type].height;
         this.posX = mouseX - (this.width / 2);
         this.posY = mouseY - (this.height / 2);
@@ -25,14 +28,15 @@ export class Gate {
 
         this.input = [];
         this.input.push(new Node(this.posX, this.posY + 15));
-        if (this.type != gateType.NOT) {
+        if (this.type !== gateType.NOT && this.type !== gateType.sa1 && this.type !== gateType.sa0) {
             this.input.push(new Node(this.posX, this.posY + this.height - 15));
             this.input[0].setBrother(this.input[1]);
             this.input[1].setBrother(this.input[0]);
         }
         this.output = new Node(this.posX + this.width, this.posY + this.height / 2, true);
         this.nodeStartID = this.input[0].id;
-    
+    //console.log("jain",this.input);
+    //console.log("jain2",this.output);
     }
 
     /**
@@ -76,7 +80,7 @@ export class Gate {
             this.posY = mouseY + this.offsetMouseY;
         }
 
-        if (this.type == gateType.NOT) {
+        if (this.type == gateType.NOT || this.type == gateType.sa1 || this.type == gateType.sa0) {
             this.input[0].updatePosition(this.posX, this.posY + this.height / 2);
         } else {
             this.input[0].updatePosition(this.posX, this.posY + 15);
@@ -99,7 +103,6 @@ export class Gate {
 
         this.generateOutput();
         this.output.draw();
-        
     }
 
     refreshNodes()
@@ -107,7 +110,7 @@ export class Gate {
         let currentID = this.nodeStartID;
         this.input[0].setID(currentID);
         currentID++;
-        if (this.type != gateType.NOT)
+        if (this.type != gateType.NOT && this.type !== gateType.sa1 && this.type !== gateType.sa0)
         {
             this.input[1].setID(currentID);
             currentID++;
@@ -130,12 +133,29 @@ export class Gate {
             case gateType.NOT:
                 return !this.input[0].getValue();
 
+            case gateType.sa0:
+                return 0;
+
+            case gateType.sa1:
+                return 1;
+
             case gateType.AND:
                 return this.input[0].getValue() && this.input[1].getValue();
 
             case gateType.NAND:
                 return !(this.input[0].getValue() && this.input[1].getValue());
 
+            case gateType.OR:
+                return this.input[0].getValue() || this.input[1].getValue();
+
+            case gateType.NOR:
+                return !(this.input[0].getValue() || this.input[1].getValue());
+
+            case gateType.XOR:
+                return (this.input[0].getValue() ^ this.input[1].getValue());
+
+            case gateType.XNOR:
+                return !(this.input[0].getValue() ^ this.input[1].getValue());
         }
     }
 
@@ -149,12 +169,30 @@ export class Gate {
         switch (str) {
             case "NOT":
                 return gateType.NOT;
+            
+            case "sa1":
+                return gateType.sa1;
+            
+            case "sa0":
+                return gateType.sa0;
 
             case "AND":
                 return gateType.AND;
 
             case "NAND":
                 return gateType.NAND;
+
+            case "OR":
+                return gateType.OR;
+
+            case "NOR":
+                return gateType.NOR;
+
+            case "XOR":
+                return gateType.XOR;
+
+            case "XNOR":
+                return gateType.XNOR;
             //default here
 
         }

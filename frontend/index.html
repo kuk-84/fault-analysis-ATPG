@@ -4,6 +4,8 @@
 <head>
 	<!-- BOOTSTRAP STUFF -->
 	<meta charset="utf-8">
+	<meta name="description"
+		content="A logic circuit simulator made with p5.js library, useful for educational use. It can be used to simulate combinational and sequential circuits.">
 	<meta name="author" content="drendog">
 	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,16 +17,30 @@
 	<script src="vendor/js/p5.min.js"></script>
 	<!-- Simulator stuff -->
 	<script type="module" src="simulator/js/simulator.js"></script>
-	<title>Circuit Simulator</title>
+	<title>ATPG Simulator</title>
 </head>
 
 <body>
 
 	<!-- Fixed navbar -->
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<a class="navbar-brand text-center" href="#">
+			ATPG
+			<br>Simulator
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+			aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
+					<!-- TODO
+              <div class="navGroupTools"><button type="button" class="btn btn-outline-light" disabled><i class="fa fa-arrow-circle-left"></i>
+              	Undo
+              </button><button type="button" class="btn btn-outline-light" disabled><i class="fa fa-arrow-circle-right"></i>
+              	Redo
+              </button></div>-->
 					<div class="navGroupTools">
 						<button type="button" class="btn btn-outline-light Edit active" tool="Edit"
 							onclick="activeTool(this)">
@@ -37,6 +53,11 @@
 						</button>
 					</div>
 					<div class="navGroupTools">
+						<label type="button" class="btn btn-outline-light" style="margin:0px">
+							<input id="projectFile" type="file"></input>
+							<i class="fa fa-upload"></i>
+							Load
+						</label>
 						<a download="LogicCircuit00" href="#" id="saveProjectFile">
 							<button type="button" class="btn btn-outline-light">
 								<i class="fa fa-save"></i>
@@ -44,6 +65,13 @@
 							</button>
 						</a>
 					</div>
+					<div class="githubSection">
+						<button type="button" class="btn btn-outline-light"
+							onclick="">
+							Execute
+					</button>
+					</div>
+					</a>
 				</li>
 			</ul>
 		</div>
@@ -74,6 +102,27 @@
 						class="list-group-item list-group-item-action pl-1">
 						<img src="simulator/img/NAND.svg" width="50">
 					</button>
+					<button type="button" tool="OR" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/OR.svg" width="50">
+					</button>
+					<button type="button" tool="NOR" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/NOR.svg" width="50">
+					</button>
+					<button type="button" tool="XOR" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/XOR.svg" width="50">
+					</button>
+					 <button type="button" tool="sa0" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/sa0.svg" width="50">
+					</button>
+					<button type="button" tool="sa0" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="simulator/img/sa1.svg" width="50">
+					</button>
+					
 				</div>
 			</div>
 			<div class="col-10 pl-0">
@@ -83,5 +132,6 @@
 		</div>
 	</div>
 </body>
+
 
 </html>

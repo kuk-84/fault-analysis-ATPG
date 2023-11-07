@@ -8,6 +8,9 @@ export let IC_IMG = []; // integrated circuits images
 export let gate = [];
 export let logicInput = [];
 export let logicOutput = [];
+export let logicClock = [];
+export let srLatch = [];
+export let flipflop = [];
 export let wireMng;
 export let colorMouseOver = [0 ,0x7B, 0xFF];
 export let fileManager = new FileManager();
@@ -20,6 +23,11 @@ export function preload() {
     gateIMG.push(loadImage('simulator/img/NOT.svg'));
     gateIMG.push(loadImage('simulator/img/AND.svg'));
     gateIMG.push(loadImage('simulator/img/NAND.svg'));
+    gateIMG.push(loadImage('simulator/img/OR.svg'));
+    gateIMG.push(loadImage('simulator/img/NOR.svg'));
+    gateIMG.push(loadImage('simulator/img/XOR.svg'));
+    gateIMG.push(loadImage('simulator/img/sa1.svg'));
+    gateIMG.push(loadImage('simulator/img/sa0.svg'));
 
 }
 
@@ -65,6 +73,7 @@ export function draw() {
 
     for (let i = 0; i < logicOutput.length; i++)
         logicOutput[i].draw();
+
 
     if(fileManager.isLoadingState)
         fileManager.isLoadingState = false;
@@ -128,7 +137,6 @@ export function mouseClicked() {
         for (let i = 0; i < logicOutput.length; i++)
             logicOutput[i].mouseClicked();
 
-
     } else if (currMouseAction == MouseAction.DELETE) {
         //
         for (let i = 0; i < gate.length; i++) {
@@ -155,6 +163,7 @@ export function mouseClicked() {
             }
         }
 
+        
     }
     wireMng.mouseClicked();
 }
