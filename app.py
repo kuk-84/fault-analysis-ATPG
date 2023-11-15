@@ -1,0 +1,27 @@
+import mimetypes
+mimetypes.add_type('application/javascript', '.js')
+mimetypes.add_type('text/css', '.css')
+mimetypes.add_type('image/svg+xml', '.svg')
+import generatenetlist
+from flask import Flask, render_template,send_file,url_for,request,redirect
+import os
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/SomeFunction')
+def SomeFunction():
+    print('In SomeFunction')
+    result=generatenetlist.generate_netlist()
+    if result is None:
+        return render_template('index.html')
+    return render_template('result.html')
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+

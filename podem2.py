@@ -1,5 +1,5 @@
 import copy
-f=open("D:/major1/backend/netlist.txt","r")
+f=open("C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/netlist.txt","r")
 l=f.readlines()
 
 def read_netlist():

@@ -1,13 +1,13 @@
-import { Clock } from "./circuit_components/Clock.js";
-import { FF_D_Single, FF_D_MasterSlave } from "./circuit_components/FF_D.js";
-import { FF_JK } from "./circuit_components/FF_JK.js";
-import { FF_T } from "./circuit_components/FF_T.js";
+import { Clock } from "./Clock.js";
+import { FF_D_Single, FF_D_MasterSlave } from "./FF_D.js";
+import { FF_JK } from "./FF_JK.js";
+import { FF_T } from "./FF_T.js";
 import { flipflop, logicInput, logicOutput, logicClock, gate, srLatch } from "./simulator.js";
-import { Gate } from "./circuit_components/Gate.js";
-import { LogicInput } from "./circuit_components/LogicInput.js";
-import { LogicOutput } from "./circuit_components/LogicOutput.js";
-import { MouseAction, syncType } from "./circuit_components/Enums.js"
-import { SR_LatchSync, SR_LatchAsync, SR_Latch } from "./circuit_components/SR_Latch.js"
+import { Gate } from "./Gate.js";
+import { LogicInput } from "./LogicInput.js";
+import { LogicOutput } from "./LogicOutput.js";
+import { MouseAction, syncType } from "./Enums.js"
+import { SR_LatchSync, SR_LatchAsync, SR_Latch } from "./SR_Latch.js"
 
 export let currMouseAction = MouseAction.EDIT;
 

@@ -7,16 +7,20 @@
 	<meta name="description"
 		content="A logic circuit simulator made with p5.js library, useful for educational use. It can be used to simulate combinational and sequential circuits.">
 	<meta name="author" content="drendog">
-	<link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="simulator/css/simstyle.css">
-	<script src="vendor/js/jquery-3.3.1.slim.min.js"></script>
-	<script src="vendor/js/popper.min.js"></script>
-	<script src="vendor/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="{{url_for('static',filename='css/simstyle.css')}}">
+	<script src="{{url_for('static',filename='js/jquery-3.3.1.slim.min.js')}}"></script>
+	<script src="{{url_for('static',filename='js/popper.min.js')}}"></script>
+	<script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
 	<!-- p5 stuff -->
-	<script src="vendor/js/p5.min.js"></script>
+	<script src="{{url_for('static',filename='js/p5.min.js')}}"></script>
+	
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
+    <script type=text/javascript> $(function() { $("#mybutton").click(function (event) { $.getJSON('/SomeFunction', { },
+    function(data) { }); return false; }); }); </script>
 	<!-- Simulator stuff -->
-	<script type="module" src="simulator/js/simulator.js"></script>
+	<script type="module" src="{{url_for('static',filename='js/simulator.js')}}"></script>
 	<title>ATPG Simulator</title>
 </head>
 
@@ -47,7 +51,7 @@
 							<i class="fa fa-edit"></i>
 							Edit
 						</button>
-						<button type="button" class="btn btn-outline-light" tool="Delete" onclick="activeTool(this)"">
+						<button type="button" class="btn btn-outline-light" tool="Delete" onclick="activeTool(this)">
               				<i class=" fa fa-trash-o"></i>
 							Delete
 						</button>
@@ -66,11 +70,9 @@
 						</a>
 					</div>
 					<div class="githubSection">
-						<button type="button" class="btn btn-outline-light"
-							onclick="">
-							Execute
-					</button>
+						<input type = "button" id = "mybutton" value = "Execute" />
 					</div>
+					
 					</a>
 				</li>
 			</ul>
@@ -84,43 +86,43 @@
 				<div class="list-group float-right" style="min-width: 50px; max-width: 60px">
 					<button type="button" tool="LogicInput" title="Logic Input" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/LogicInput.svg" class="ml-2" width="32">
+						<img src="{{url_for('static',filename='img/LogicInput.svg')}}" class="ml-2" width="32">
 					</button>
 					<button type="button" tool="LogicOutput" title="Logic Output" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/LogicOutput.svg" class="ml-2" width="32">
+						<img src="{{url_for('static',filename='img/LogicOutput.svg')}}" class="ml-2" width="32">
 					</button>
 					<button type="button" tool="NOT" isGate="true" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/NOT.svg" width="50">
+						<img src="{{url_for('static',filename='img/NOT.svg')}}" width="50">
 					</button>
 					<button type="button" tool="AND" isGate="true" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/AND.svg" width="50">
+						<img src="{{url_for('static',filename='img/AND.svg')}}" width="50">
 					</button>
 					<button type="button" tool="NAND" isGate="true" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/NAND.svg" width="50">
+						<img src="{{url_for('static',filename='img/NAND.svg')}}" width="50">
 					</button>
 					<button type="button" tool="OR" isGate="true" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/OR.svg" width="50">
+						<img src="{{url_for('static',filename='img/OR.svg')}}" width="50">
 					</button>
 					<button type="button" tool="NOR" isGate="true" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/NOR.svg" width="50">
+						<img src="{{url_for('static',filename='img/NOR.svg')}}" width="50">
 					</button>
 					<button type="button" tool="XOR" isGate="true" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/XOR.svg" width="50">
+						<img src="{{url_for('static',filename='img/XOR.svg')}}" width="50">
 					</button>
 					 <button type="button" tool="sa0" isGate="true" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/sa0.svg" width="50">
+						<img src="{{url_for('static',filename='img/sa0.svg')}}" width="50">
 					</button>
 					<button type="button" tool="sa0" isGate="true" onclick="activeTool(this)"
 						class="list-group-item list-group-item-action pl-1">
-						<img src="simulator/img/sa1.svg" width="50">
+						<img src="{{url_for('static',filename='img/sa1.svg')}}" width="50">
 					</button>
 					
 				</div>
@@ -131,6 +133,14 @@
 			</div>
 		</div>
 	</div>
+
+<script>
+	function ExecPythonCommand(pythonCommand){
+    var request = new XMLHttpRequest()
+    request.open("GET", "/" + pythonCommand, true)
+    request.send()
+}
+</script>
 </body>
 
 

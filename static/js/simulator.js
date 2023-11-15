@@ -1,6 +1,6 @@
 import { activeTool, currMouseAction } from "./menutools.js"
-import { MouseAction } from "./circuit_components/Enums.js"
-import { WireManager } from "./circuit_components/Wire.js";
+import { MouseAction } from "./Enums.js"
+import { WireManager } from "./Wire.js";
 import { FileManager } from "./FileManager.js"
 
 export let gateIMG = []; // gates images
@@ -19,15 +19,15 @@ export let fileManager = new FileManager();
  * @todo TODO
  */
 export function preload() {
-    gateIMG.push(loadImage('simulator/img/LogicInput.svg'));// For testing usage
-    gateIMG.push(loadImage('simulator/img/NOT.svg'));
-    gateIMG.push(loadImage('simulator/img/AND.svg'));
-    gateIMG.push(loadImage('simulator/img/NAND.svg'));
-    gateIMG.push(loadImage('simulator/img/OR.svg'));
-    gateIMG.push(loadImage('simulator/img/NOR.svg'));
-    gateIMG.push(loadImage('simulator/img/XOR.svg'));
-    gateIMG.push(loadImage('simulator/img/sa1.svg'));
-    gateIMG.push(loadImage('simulator/img/sa0.svg'));
+    gateIMG.push(loadImage('static/img/LogicInput.svg'));// For testing usage
+    gateIMG.push(loadImage('static/img/NOT.svg'));
+    gateIMG.push(loadImage('static/img/AND.svg'));
+    gateIMG.push(loadImage('static/img/NAND.svg'));
+    gateIMG.push(loadImage('static/img/OR.svg'));
+    gateIMG.push(loadImage('static/img/NOR.svg'));
+    gateIMG.push(loadImage('static/img/XOR.svg'));
+    gateIMG.push(loadImage('static/img/sa1.svg'));
+    gateIMG.push(loadImage('static/img/sa0.svg'));
 
 }
 

@@ -1,5 +1,5 @@
 import copy
-f=open("D:/major1/backend/netlist.txt","r")
+f=open("C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/netlist1.txt","r")
 l=f.readlines();
 
 def read_netlist():
@@ -460,9 +460,19 @@ FL = 0;
 FV = Fault_Value
 
 
+# file_path = 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/fault.txt'
+# with open(file_path, 'r') as file:
+#     for line in file:
+#         match = re.search(r'value: (\d+) location: (\w+)', line)
+#         if match:
+#             FV = match.group(1)
+#             Fault_Location = match.group(2)
+#             print(f"Fault Location: {Fault_Location}, Fault Values: {FV}")
+
 print ('Fault Location', Fault_Location)
 print ('Fault Value', FV)
 print (' ')
-main_podem(Fault_Location,FV)
+result=main_podem(Fault_Location,FV)
+print(result)
 
 

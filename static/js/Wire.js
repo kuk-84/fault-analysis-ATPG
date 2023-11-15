@@ -1,6 +1,6 @@
-import { currMouseAction } from "../menutools.js"
+import { currMouseAction } from "./menutools.js"
 import { MouseAction, INPUT_STATE } from "./Enums.js";
-import { colorMouseOver, fileManager } from "../simulator.js";
+import { colorMouseOver, fileManager } from "./simulator.js";
 
 /**
  * Rappresent a wire

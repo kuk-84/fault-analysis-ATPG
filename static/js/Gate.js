@@ -1,9 +1,9 @@
-import { currMouseAction, backToEdit } from "../menutools.js"
-import { gateIMG } from "../simulator.js";
+import { currMouseAction, backToEdit } from "./menutools.js"
+import { gateIMG } from "./simulator.js";
 import { gateType, MouseAction } from "./Enums.js"
 import { Node } from "./Node.js";
-import { colorMouseOver, fileManager } from "../simulator.js";
-import { FileManager } from "../FileManager.js";
+import { colorMouseOver, fileManager } from "./simulator.js";
+import { FileManager } from "./FileManager.js";
 
 /**
  * Class that 

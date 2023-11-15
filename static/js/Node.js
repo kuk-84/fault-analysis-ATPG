@@ -1,5 +1,5 @@
 import { INPUT_STATE } from "./Enums.js";
-import { wireMng } from "../simulator.js";
+import { wireMng } from "./simulator.js";
 
 export let nodeList = [];
 

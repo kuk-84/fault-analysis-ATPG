@@ -1,9 +1,9 @@
 import { logicInput, logicOutput, gate, flipflop, logicClock, srLatch, wireMng } from "./simulator.js"
-import { LogicInput } from "./circuit_components/LogicInput.js"
-import { LogicOutput } from "./circuit_components/LogicOutput.js";
-import { Clock } from "./circuit_components/Clock.js";
-import { Gate } from "./circuit_components/Gate.js";
-import { nodeList } from "./circuit_components/Node.js";
+import { LogicInput } from "./LogicInput.js"
+import { LogicOutput } from "./LogicOutput.js";
+import { Clock } from "./Clock.js";
+import { Gate } from "./Gate.js";
+import { nodeList } from "./Node.js";
 
 let eventHistory = [];
 

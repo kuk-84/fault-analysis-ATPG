@@ -1,7 +1,7 @@
-import { currMouseAction, backToEdit } from "../menutools.js"
+import { currMouseAction, backToEdit } from "./menutools.js"
 import { MouseAction } from "./Enums.js";
 import { Node, fillValue } from "./Node.js";
-import { colorMouseOver, fileManager } from "../simulator.js"
+import { colorMouseOver, fileManager } from "./simulator.js"
 
 /**
  * @todo TODO
