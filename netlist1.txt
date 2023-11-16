@@ -7,4 +7,4 @@ nand2_3 n6 n2 in4
 nand2_4 n7 n3 in3
 nand2_5 n8 n4 n5
 nand2_6 n9 n6 n7
-nand2_7 out1 n8 n9
+out1 out1 out1 out1

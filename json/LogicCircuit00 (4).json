@@ -145,7 +145,7 @@
 			"posY": 247,
 			"isSpawned": true,
 			"offsetMouseX": -99,
-			"offsetMouseY": -22,
+			"offsetMouseY": -26,
 			"isMoving": false,
 			"isSaved": true,
 			"nodeStartID": 17
@@ -186,8 +186,8 @@
 			"posX": 629.1999969482422,
 			"posY": 248,
 			"isSpawned": true,
-			"offsetMouseX": -3,
-			"offsetMouseY": -14,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
 			"isMoving": false,
 			"isSaved": true,
 			"nodeStartID": 26
@@ -205,20 +205,6 @@
 			"isMoving": false,
 			"isSaved": true,
 			"nodeStartID": 29
-		},
-		{
-			"strType": "sa0",
-			"type": 8,
-			"width": 120,
-			"height": 74,
-			"posX": 534.1999969482422,
-			"posY": 196,
-			"isSpawned": true,
-			"offsetMouseX": -98,
-			"offsetMouseY": -66,
-			"isMoving": false,
-			"isSaved": true,
-			"nodeStartID": 61
 		}
 	],
 	"srLatch": [],
@@ -226,141 +212,134 @@
 		{
 			"startID": 0,
 			"endID": 4,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 1,
 			"endID": 6,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 2,
 			"endID": 7,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 3,
 			"endID": 9,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 5,
 			"endID": 12,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 8,
 			"endID": 15,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 8,
 			"endID": 17,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 10,
 			"endID": 20,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 1,
 			"endID": 11,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 0,
 			"endID": 14,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 3,
 			"endID": 18,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 2,
 			"endID": 21,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 13,
 			"endID": 23,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 16,
 			"endID": 24,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
+			"width": 8
+		},
+		{
+			"startID": 19,
+			"endID": 26,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 22,
 			"endID": 27,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 25,
 			"endID": 29,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 28,
 			"endID": 30,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		},
 		{
 			"startID": 31,
 			"endID": 32,
-			"endX": 208.1999969482422,
-			"endY": -39,
-			"width": 8
-		},
-		{
-			"startID": 19,
-			"endID": 61,
-			"endX": 208.1999969482422,
-			"endY": -39,
-			"width": 8
-		},
-		{
-			"startID": 62,
-			"endID": 26,
-			"endX": 208.1999969482422,
-			"endY": -39,
+			"endX": 215.1999969482422,
+			"endY": -45,
 			"width": 8
 		}
 	]
