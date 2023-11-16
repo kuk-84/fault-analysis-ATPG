@@ -1,5 +1,4 @@
 import copy
-import re
 f=open("D:/major1/netlist1.txt","r")
 l=f.readlines();
 
@@ -463,27 +462,31 @@ node_map=[[]]
 # ------------------------------------------------#
 # Define Fault_Location and Fault_Location here   #
 # ------------------------------------------------#
-# Fault_Location = 'n6'
-# Fault_Value = 1;
-# # ------------------------------------------------#
-# # ------------------------------------------------#
+Fault_Location = 'n6'
+Fault_Value = 1;
+# ------------------------------------------------#
+# ------------------------------------------------#
 
 FL = 0;
-# FV = Fault_Value
+FV = Fault_Value
 
-print("hello")
+
 file_path = 'D:/major1/fault.txt'
+extracted_data = []
 with open(file_path, 'r') as file:
     for line in file:
-        match = re.search(r'value: (\d+) location: (\w+)', line)
-        if match:
-            FV = match.group(1)
-            Fault_Location = match.group(2)
-            print("hello")
-            print(f"Fault Location: {Fault_Location}, Fault Values: {FV}")
+        if line.startswith('value:') and 'location:' in line:
+            # Split the line to extract value and location
+            value = line.split('value:')[1].split('location:')[0].strip()
+            location = line.split('location:')[1].strip()
+            extracted_data.append({'value': value, 'location': location})
 
-print ('Fault Location', Fault_Location)
-print ('Fault Value', FV)
-print (' ')
+# Display the extracted data
+for entry in extracted_data:
+    print(f"Value: {entry['value']}, Location: {entry['location']}")
+
+#print ('Fault Location', Fault_Location)
+#print ('Fault Value', FV)
+#print (' ')
 result=main_podem(Fault_Location,FV)
 print(result)
