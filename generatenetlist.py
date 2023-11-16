@@ -98,10 +98,10 @@ def generate_netlist():
 
 
     # Run with the first file
-    process_json_file('C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/json/LogicCircuit00.json', 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/netlist1.txt',0)
+    process_json_file('D:/major1/json/LogicCircuit00.json', 'D:/major1/netlist1.txt',0)
 
     # Run with the second file
-    process_json_file('C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/json/LogicCircuit1.json', 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/fault.txt',1)
+    process_json_file('D:/major1/json/LogicCircuit1.json', 'D:/major1/fault.txt',1)
     print("generated")
     result = subprocess.run(["python", "podem.py"], capture_output=True, text=True).stdout.strip()
     print(f"Result from podem.py: {result}")

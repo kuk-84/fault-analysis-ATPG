@@ -15,8 +15,8 @@ export const gateType =
     NOR: 5,
     XOR: 6,
     XNOR: 9,
-    sa1: 7,
-    sa0: 8
+    sa1: 8,
+    sa0: 7
 };
 
 export const IC_type =

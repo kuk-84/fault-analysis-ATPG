@@ -1,5 +1,6 @@
 import copy
-f=open("C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/netlist1.txt","r")
+import re
+f=open("D:/major1/netlist1.txt","r")
 l=f.readlines();
 
 def read_netlist():
@@ -425,7 +426,7 @@ def main_podem(nG_C, nV):
                 elif(node_values[connected_in[p]] == (1-nc_value)):
                     print('Test not detected')
                     break
-        file_path = 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/output.txt'  
+        file_path = 'D:/major1/output.txt'  
         if(count == (len(connected_in)-1)): 
             print('Fault is detectable')
             print (' ')
@@ -462,23 +463,24 @@ node_map=[[]]
 # ------------------------------------------------#
 # Define Fault_Location and Fault_Location here   #
 # ------------------------------------------------#
-Fault_Location = 'n6'
-Fault_Value = 1;
-# ------------------------------------------------#
-# ------------------------------------------------#
+# Fault_Location = 'n6'
+# Fault_Value = 1;
+# # ------------------------------------------------#
+# # ------------------------------------------------#
 
 FL = 0;
-FV = Fault_Value
+# FV = Fault_Value
 
-
-# file_path = 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/fault.txt'
-# with open(file_path, 'r') as file:
-#     for line in file:
-#         match = re.search(r'value: (\d+) location: (\w+)', line)
-#         if match:
-#             FV = match.group(1)
-#             Fault_Location = match.group(2)
-#             print(f"Fault Location: {Fault_Location}, Fault Values: {FV}")
+print("hello")
+file_path = 'D:/major1/fault.txt'
+with open(file_path, 'r') as file:
+    for line in file:
+        match = re.search(r'value: (\d+) location: (\w+)', line)
+        if match:
+            FV = match.group(1)
+            Fault_Location = match.group(2)
+            print("hello")
+            print(f"Fault Location: {Fault_Location}, Fault Values: {FV}")
 
 print ('Fault Location', Fault_Location)
 print ('Fault Value', FV)

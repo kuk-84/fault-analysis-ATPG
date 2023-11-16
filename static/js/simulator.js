@@ -26,8 +26,8 @@ export function preload() {
     gateIMG.push(loadImage('static/img/OR.svg'));
     gateIMG.push(loadImage('static/img/NOR.svg'));
     gateIMG.push(loadImage('static/img/XOR.svg'));
-    gateIMG.push(loadImage('static/img/sa1.svg'));
     gateIMG.push(loadImage('static/img/sa0.svg'));
+    gateIMG.push(loadImage('static/img/sa1.svg'));
 
 }
 
