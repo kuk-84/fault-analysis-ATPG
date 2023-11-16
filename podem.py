@@ -471,17 +471,22 @@ FL = 0;
 FV = Fault_Value
 
 
-# file_path = 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/fault.txt'
-# with open(file_path, 'r') as file:
-#     for line in file:
-#         match = re.search(r'value: (\d+) location: (\w+)', line)
-#         if match:
-#             FV = match.group(1)
-#             Fault_Location = match.group(2)
-#             print(f"Fault Location: {Fault_Location}, Fault Values: {FV}")
+file_path = 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/fault.txt'
+extracted_data = []
+with open(file_path, 'r') as file:
+    for line in file:
+        if line.startswith('value:') and 'location:' in line:
+            # Split the line to extract value and location
+            value = line.split('value:')[1].split('location:')[0].strip()
+            location = line.split('location:')[1].strip()
+            extracted_data.append({'value': value, 'location': location})
 
-print ('Fault Location', Fault_Location)
-print ('Fault Value', FV)
-print (' ')
+# Display the extracted data
+for entry in extracted_data:
+    print(f"Value: {entry['value']}, Location: {entry['location']}")
+
+#print ('Fault Location', Fault_Location)
+#print ('Fault Value', FV)
+#print (' ')
 result=main_podem(Fault_Location,FV)
 print(result)
