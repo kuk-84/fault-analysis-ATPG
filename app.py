@@ -16,9 +16,7 @@ def index():
 def SomeFunction():
     print('In SomeFunction')
     result=generatenetlist.generate_netlist()
-    if result is None:
-        return render_template('index.html')
-    return render_template('result.html')
+    return render_template('result.html',result=result)
 
 
 

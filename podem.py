@@ -425,18 +425,29 @@ def main_podem(nG_C, nV):
                 elif(node_values[connected_in[p]] == (1-nc_value)):
                     print('Test not detected')
                     break
+        file_path = 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/output.txt'  
         if(count == (len(connected_in)-1)): 
             print('Fault is detectable')
             print (' ')
             print('Primary Input values are:')
-            for i in range (0, len(ins)):
-                if(node_values[ins[i]]==-5):
-                    print ('Node',node_map[ins[i]][0]," ",'x')
-                else:
-                    print ('Node',node_map[ins[i]][0]," ",node_values[ins[i]])
+            with open(file_path, 'w') as file:
+                file.write('Fault is detectable\n')
+                file.write('Primary Input values are:\n')
+
+            for i in range(0, len(ins)):
+                with open(file_path, 'a') as file:
+                    if node_values[ins[i]] == -5:
+                        print('Node', node_map[ins[i]][0], " ", 'x')
+                        file.write('Node ' + node_map[ins[i]][0] + " " + 'x\n')
+                    else:
+                        print('Node', node_map[ins[i]][0], " ", node_values[ins[i]])
+                        file.write('Node ' + node_map[ins[i]][0] + " " + str(node_values[ins[i]]) + '\n')
 
         else:
             print('Fault is not detectable')
+            with open(file_path, 'w') as file:
+                file.write('Fault is not detectable')
+
     
     return (PI, PI_V)
 
@@ -474,5 +485,3 @@ print ('Fault Value', FV)
 print (' ')
 result=main_podem(Fault_Location,FV)
 print(result)
-
-
