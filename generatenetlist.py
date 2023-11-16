@@ -90,7 +90,7 @@ def generate_netlist():
             with open(output_file, 'r') as file:
                 lines = file.readlines()
                 last_line = lines[-1].strip()
-                new_last_line = re.sub(r'\bn\w*', 'out1', last_line)
+                new_last_line = re.sub(r'\bn\d+\b', 'out1', last_line,count=1)
                 #new_last_line = last_line.replace('n10', 'out1')
                 lines[-1] = new_last_line + '\n'  # Add newline character back
             with open(output_file, 'w') as file:
