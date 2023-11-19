@@ -56,10 +56,12 @@ def generate_netlist():
                 for gate_id, info in gate_info.items():
                     if info["gate_type"] == "sa1":
                         input_wire_ids_str = ' '.join(info["input_wire_ids"])
-                        txt_file.write(f'value: 1 location: {input_wire_ids_str}\n')
+                        txt_file.write(f'0\n')
+                        txt_file.write(input_wire_ids_str)
                     if info["gate_type"] == "sa0":
                         input_wire_ids_str = ' '.join(info["input_wire_ids"])
-                        txt_file.write(f'value: 0 location: {input_wire_ids_str}\n')
+                        txt_file.write(f'1\n')
+                        txt_file.write(input_wire_ids_str)
         else:
             gate_counts={}
             with open(output_file, 'w') as txt_file:
