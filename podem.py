@@ -462,31 +462,24 @@ node_map=[[]]
 # ------------------------------------------------#
 # Define Fault_Location and Fault_Location here   #
 # ------------------------------------------------#
-Fault_Location = 'n6'
-Fault_Value = 1;
-# ------------------------------------------------#
-# ------------------------------------------------#
+# Fault_Location = 'n6'
+# Fault_Value = 1;
+# # ------------------------------------------------#
+# # ------------------------------------------------#
 
-FL = 0;
-FV = Fault_Value
+# FL = 0;
+# FV = Fault_Value
 
 
 file_path = 'D:/major1/fault.txt'
-extracted_data = []
+# extracted_data = []
 with open(file_path, 'r') as file:
-    for line in file:
-        if line.startswith('value:') and 'location:' in line:
-            # Split the line to extract value and location
-            value = line.split('value:')[1].split('location:')[0].strip()
-            location = line.split('location:')[1].strip()
-            extracted_data.append({'value': value, 'location': location})
-
-# Display the extracted data
-for entry in extracted_data:
-    print(f"Value: {entry['value']}, Location: {entry['location']}")
-
-#print ('Fault Location', Fault_Location)
-#print ('Fault Value', FV)
+    Fault_Value = int(file.readline().strip())
+    Fault_Location = file.readline().strip()
+FL = 0;
+FV = Fault_Value
+print ('Fault Location', Fault_Location)
+print ('Fault Value', FV)
 #print (' ')
 result=main_podem(Fault_Location,FV)
 print(result)
