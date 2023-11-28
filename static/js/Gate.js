@@ -1,7 +1,7 @@
 import { currMouseAction, backToEdit } from "./menutools.js"
 import { gateIMG } from "./simulator.js";
 import { gateType, MouseAction } from "./Enums.js"
-import { Node } from "./Node.js";
+import { Node ,fillValue} from "./Node.js";
 import { colorMouseOver, fileManager } from "./simulator.js";
 import { FileManager } from "./FileManager.js";
 
@@ -12,6 +12,8 @@ import { FileManager } from "./FileManager.js";
 export class Gate {
     constructor(strType) {
         this.strType = strType;
+        this.tvalue=false;
+        this.diameter=25;
         //console.log(this.strType);
         this.type = this.convertToType(strType);
         //console.log(this.type);
@@ -39,11 +41,14 @@ export class Gate {
     //console.log("jain2",this.output);
     }
 
+    
     /**
      * Destroy this gate
      * First destroy and delete all input
      * second destroy and delete the output
      */
+   
+
     destroy() {
         for (let i = 0; i < this.input.length; i++) {
             this.input[i].destroy();
@@ -74,7 +79,7 @@ export class Gate {
             fileManager.saveState();
             this.isSaved = true;
         }
-
+        fillValue(this.tvalue);
         if (this.isMoving) {
             this.posX = mouseX + this.offsetMouseX;
             this.posY = mouseY + this.offsetMouseY;
@@ -95,7 +100,7 @@ export class Gate {
             stroke(colorMouseOver[0], colorMouseOver[1], colorMouseOver[2]);
             rect(this.posX, this.posY, this.width, this.height);
         }
-
+        circle(this.posX, this.posY, this.diameter);
         image(gateIMG[this.type], this.posX, this.posY);
 
         for (let i = 0; i < this.input.length; i++)
@@ -103,6 +108,19 @@ export class Gate {
 
         this.generateOutput();
         this.output.draw();
+        this.printInfo();
+
+        textSize(18);
+
+        if (this.tvalue) {
+            textStyle(BOLD);
+            text('1', this.posX - this.diameter / 4, this.posY + this.diameter / 4);
+        }
+        else {
+            textStyle(NORMAL);
+            fill(255);
+            text('0', this.posX - this.diameter / 4, this.posY + this.diameter / 4);
+        }
     }
 
     refreshNodes()
@@ -117,7 +135,13 @@ export class Gate {
         }
         this.output.setID(currentID);
     }
-
+    printInfo() {
+        noStroke();
+        fill(0);
+        textSize(12);
+        textStyle(NORMAL);
+        //text('LOG. INPUT', this.posX - 20, this.posY + 25);
+    }
     /**
      * Generate gate output
      */
@@ -232,6 +256,10 @@ export class Gate {
     mouseReleased() {
         this.isMoving = false;
     }
+    doubleClicked() {
+        if (this.isMouseOver())
+            this.tvalue ^= true;
+    }
 
     mouseClicked() {
         let result = this.isMouseOver();
@@ -241,6 +269,9 @@ export class Gate {
 
         result |= this.output.mouseClicked();
         return result;
+    }
+    toggle() {
+        this.tvalue ^= true;
     }
 
 };

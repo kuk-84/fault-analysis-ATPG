@@ -1,0 +1,366 @@
+{
+	"logicInput": [
+		{
+			"value": false,
+			"posX": 201.1999969482422,
+			"posY": 117,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 0,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 199.1999969482422,
+			"posY": 178,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 1,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 199.1999969482422,
+			"posY": 246,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 2,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 199.1999969482422,
+			"posY": 310,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 3,
+			"isSaved": true
+		}
+	],
+	"logicOutput": [
+		{
+			"value": false,
+			"posX": 1083.1999969482422,
+			"posY": 204,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 32,
+			"isSaved": true
+		}
+	],
+	"flipflop": [],
+	"logicClock": [],
+	"gate": [
+		{
+			"strType": "NOT",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 308.1999969482422,
+			"posY": 90,
+			"isSpawned": true,
+			"offsetMouseX": -97,
+			"offsetMouseY": -24,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 4
+		},
+		{
+			"strType": "AND",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 302.1999969482422,
+			"posY": 181,
+			"isSpawned": true,
+			"offsetMouseX": -95,
+			"offsetMouseY": -28,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 6
+		},
+		{
+			"strType": "NOT",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 293.1999969482422,
+			"posY": 281,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 9
+		},
+		{
+			"strType": "NAND",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 518.1999969482422,
+			"posY": 87,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 11
+		},
+		{
+			"strType": "NAND",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 514.1999969482422,
+			"posY": 160,
+			"isSpawned": true,
+			"offsetMouseX": -98,
+			"offsetMouseY": -27,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 14
+		},
+		{
+			"strType": "NAND",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 513.1999969482422,
+			"posY": 235,
+			"isSpawned": true,
+			"offsetMouseX": -3,
+			"offsetMouseY": -17,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 17
+		},
+		{
+			"strType": "NAND",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 512.1999969482422,
+			"posY": 313,
+			"isSpawned": true,
+			"offsetMouseX": -1,
+			"offsetMouseY": -21,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 20
+		},
+		{
+			"strType": "AND",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 746.1999969482422,
+			"posY": 132,
+			"isSpawned": true,
+			"offsetMouseX": -1,
+			"offsetMouseY": -34,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 23
+		},
+		{
+			"strType": "AND",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 749.1999969482422,
+			"posY": 233,
+			"isSpawned": true,
+			"offsetMouseX": -98,
+			"offsetMouseY": -28,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 26
+		},
+		{
+			"strType": "NAND",
+			"tvalue": false,
+			"diameter": 25,
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 893.1999969482422,
+			"posY": 182,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 29
+		}
+	],
+	"srLatch": [],
+	"wire": [
+		{
+			"startID": 0,
+			"endID": 4,
+			"endX": 234.1999969482422,
+			"endY": 114,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 6,
+			"endX": 224.1999969482422,
+			"endY": 182,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 7,
+			"endX": 234.1999969482422,
+			"endY": 244,
+			"width": 8
+		},
+		{
+			"startID": 3,
+			"endID": 9,
+			"endX": 233.1999969482422,
+			"endY": 303,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 11,
+			"endX": 232.1999969482422,
+			"endY": 175,
+			"width": 8
+		},
+		{
+			"startID": 5,
+			"endID": 12,
+			"endX": 405.1999969482422,
+			"endY": 114,
+			"width": 8
+		},
+		{
+			"startID": 0,
+			"endID": 14,
+			"endX": 230.1999969482422,
+			"endY": 118,
+			"width": 8
+		},
+		{
+			"startID": 8,
+			"endID": 15,
+			"endX": 397.1999969482422,
+			"endY": 209,
+			"width": 8
+		},
+		{
+			"startID": 8,
+			"endID": 17,
+			"endX": 403.1999969482422,
+			"endY": 210,
+			"width": 8
+		},
+		{
+			"startID": 3,
+			"endID": 18,
+			"endX": 227.1999969482422,
+			"endY": 306,
+			"width": 8
+		},
+		{
+			"startID": 10,
+			"endID": 20,
+			"endX": 395.1999969482422,
+			"endY": 305,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 21,
+			"endX": 223.1999969482422,
+			"endY": 250,
+			"width": 8
+		},
+		{
+			"startID": 13,
+			"endID": 23,
+			"endX": 619.1999969482422,
+			"endY": 110,
+			"width": 8
+		},
+		{
+			"startID": 16,
+			"endID": 24,
+			"endX": 612.1999969482422,
+			"endY": 187,
+			"width": 8
+		},
+		{
+			"startID": 19,
+			"endID": 26,
+			"endX": 613.1999969482422,
+			"endY": 266,
+			"width": 8
+		},
+		{
+			"startID": 22,
+			"endID": 27,
+			"endX": 615.1999969482422,
+			"endY": 333,
+			"width": 8
+		},
+		{
+			"startID": 25,
+			"endID": 29,
+			"endX": 847.1999969482422,
+			"endY": 158,
+			"width": 8
+		},
+		{
+			"startID": 28,
+			"endID": 30,
+			"endX": 890.1999969482422,
+			"endY": 213,
+			"width": 8
+		},
+		{
+			"startID": 31,
+			"endID": 32,
+			"endX": 995.1999969482422,
+			"endY": 206,
+			"width": 8
+		}
+	]
+}

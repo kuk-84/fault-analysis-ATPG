@@ -3,8 +3,7 @@ mimetypes.add_type('application/javascript', '.js')
 mimetypes.add_type('text/css', '.css')
 mimetypes.add_type('image/svg+xml', '.svg')
 import generatenetlist
-from flask import Flask, render_template,send_file,url_for,request,redirect
-import os
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -15,11 +14,8 @@ def index():
 @app.route('/SomeFunction')
 def SomeFunction():
     print('In SomeFunction')
-    result=generatenetlist.generate_netlist()
-    return render_template('result.html',result=result)
-
-
+    result = generatenetlist.generate_netlist()
+    return render_template('index.html', result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)
-

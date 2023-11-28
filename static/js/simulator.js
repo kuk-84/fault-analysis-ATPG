@@ -118,6 +118,8 @@ export function mouseReleased() {
 export function doubleClicked() {
     for (let i = 0; i < logicInput.length; i++)
         logicInput[i].doubleClicked();
+    for (let i = 0; i < gate.length; i++)
+        gate[i].doubleClicked();
 }
 
 /**

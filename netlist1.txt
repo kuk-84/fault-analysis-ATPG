@@ -5,6 +5,6 @@ nand2_1 n4 n1 in2
 nand2_2 n5 in1 n2
 nand2_3 n6 n2 in4
 nand2_4 n7 n3 in3
-nand2_5 n8 n4 n5
-nand2_6 n9 n6 n7
-nand2_7 out1 n8 n9
+and2_2 n8 n4 n5
+and2_3 n9 n6 n7
+nand2_5 out1 n8 n9

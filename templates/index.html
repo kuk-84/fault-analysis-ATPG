@@ -22,6 +22,28 @@
 	<!-- Simulator stuff -->
 	<script type="module" src="{{url_for('static',filename='js/simulator.js')}}"></script>
 	<title>ATPG Simulator</title>
+	<style>
+        /* Add your table styles here */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Style to make the div invisible */
+        #result {
+            display: none;
+        }
+    </style>
+	
 </head>
 
 <body>
@@ -72,7 +94,6 @@
 					<div class="githubSection">
 						<input type = "button" id = "mybutton" value = "Execute" />
 					</div>
-					
 					</a>
 				</li>
 			</ul>
@@ -128,12 +149,73 @@
 				</div>
 			</div>
 			<div class="col-10 pl-0">
+				<!-- <button id="showButton">Click to Show Something</button>
+				<div id="hiddenElement">
+					Content that will appear
+					<p>{{ result }}</p>
+					
+				</div> -->
 				<!-- Simulator Canvas -->
 				<div id="canvas-sim"></div>
+				<div id="resultSection" style="display: none;">
+					<p id="resultContent">
+						<div id="result">
+							{{ result }}
+						</div>
+					
+						<h2>Displayed in Table</h2>
+						<table id="resultTable">
+							<!-- Table headers will be generated here -->
+							<tbody>
+								<!-- Table content will be generated here -->
+							</tbody>
+						</table>
+					
+						<script>
+							document.addEventListener('DOMContentLoaded', function() {
+								var resultDiv = document.getElementById('result');
+								var resultContent = resultDiv.textContent;
+								var lines = resultContent.split('\n');
+					
+								var table = document.getElementById('resultTable');
+								var tbody = table.querySelector('tbody');
+					
+								lines.forEach(function(line) {
+									var row = document.createElement('tr');
+									var cell = document.createElement('td');
+									cell.textContent = line;
+									row.appendChild(cell);
+									tbody.appendChild(row);
+								});
+							});
+						</script>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
-
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var canvasSim = document.getElementById('canvas-sim');
+			var resultSection = document.getElementById('resultSection');
+			var resultContent = document.getElementById('resultContent');
+			var myButton = document.getElementById('mybutton');
+	
+			myButton.addEventListener('click', function() {
+				// Hide canvas and show result section
+				canvasSim.style.display = 'none';
+				resultSection.style.display = 'block';
+	
+				// Call the server-side function '/SomeFunction'
+				// Update 'resultContent' with the received result
+				$.getJSON('/SomeFunction', {}, function(data) {
+					if (data.result) {
+						resultContent.innerText = data.result;
+					}
+				});
+			});
+		});
+	</script>
 <script>
 	function ExecPythonCommand(pythonCommand){
     var request = new XMLHttpRequest()
@@ -141,6 +223,7 @@
     request.send()
 }
 </script>
+  
 </body>
 
 

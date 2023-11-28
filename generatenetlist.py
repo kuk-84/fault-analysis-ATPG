@@ -11,6 +11,7 @@ def generate_netlist():
 
         gate_data = data['gate']
         wire_data = data['wire']
+        #print(gate_data)
 
         # Initialize a dictionary to store gate information
         gate_info = {}
@@ -19,6 +20,7 @@ def generate_netlist():
         for gate in gate_data:
             gate_type = gate['strType']
             gate_start_id = gate['nodeStartID']
+            gate_tvalue=gate['tvalue']
             input_wire_ids = []
 
             # Find wires connected to the gate's input pins
@@ -30,11 +32,25 @@ def generate_netlist():
                         if f"n{wire['startID']}" == existing_info['output_wire_id']:
                             matching_output_id = existing_info['output']
                             break
-
+                    
                     if matching_output_id:
                         input_wire_ids.append(matching_output_id)
                     else:
                         input_wire_ids.append(f"in{wire['startID'] + 1}")
+                    
+                    if gate_tvalue:
+                        input_wire_ids.reverse()
+
+                    # if gate_tvalue:  
+                    #     if matching_output_id:  
+                    #         input_wire_ids.append(matching_output_id)  
+                    #     else:
+                    #         pass
+                    # else:  
+                    #     if matching_output_id:  
+                    #         input_wire_ids.append(f"in{wire['startID'] + 1}")
+                    #     else:
+                    #         pass
             
             # Label the not gate's input and output pins
             if gate_type == 'NOT' or gate_type == 'sa1' or gate_type == 'sa0':
@@ -102,12 +118,17 @@ def generate_netlist():
 
 
     # Run with the first file
-    process_json_file('D:/major1/json/LogicCircuit00.json', 'D:/major1/netlist1.txt',0)
+    process_json_file('C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/json/LogicCircuit00_update1.json', 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/netlist1.txt',0)
 
     # Run with the second file
-    process_json_file('D:/major1/json/LogicCircuit1.json', 'D:/major1/fault.txt',1)
+    # process_json_file('C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/json/LogicCircuit1.json', 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/fault.txt',1)
     print("generated")
     result = subprocess.run(["python", "podem.py"], capture_output=True, text=True).stdout.strip()
     print(f"Result from podem.py: {result}")
-    return result
-    #subprocess.run(["python", "podem.py"])
+    result_string=""
+    output='C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/output.txt'
+    with open(output,'r') as file:
+        for line in file:
+            result_string+=line
+    return result_string
+    subprocess.run(["python", "podem.py"])

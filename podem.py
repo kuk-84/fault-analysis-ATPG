@@ -1,5 +1,5 @@
 import copy
-f=open("D:/major1/netlist1.txt","r")
+f=open("C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/netlist1.txt","r")
 l=f.readlines();
 
 def read_netlist():
@@ -425,7 +425,7 @@ def main_podem(nG_C, nV):
                 elif(node_values[connected_in[p]] == (1-nc_value)):
                     print('Test not detected')
                     break
-        file_path = 'D:/major1/output.txt'  
+        file_path = 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/output.txt'  
         if(count == (len(connected_in)-1)): 
             print('Fault is detectable')
             print (' ')
@@ -471,7 +471,7 @@ node_map=[[]]
 # FV = Fault_Value
 
 
-file_path = 'D:/major1/fault.txt'
+file_path = 'C:/Users/sakshi/OneDrive/Desktop/fault-analysis-ATPG/fault.txt'
 # extracted_data = []
 with open(file_path, 'r') as file:
     Fault_Value = int(file.readline().strip())

@@ -1,0 +1,367 @@
+{
+	"logicInput": [
+		{
+			"value": false,
+			"posX": 245.1999969482422,
+			"posY": 106,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 0,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 243.1999969482422,
+			"posY": 186,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 1,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 243.1999969482422,
+			"posY": 269,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 2,
+			"isSaved": true
+		},
+		{
+			"value": false,
+			"posX": 245.1999969482422,
+			"posY": 342,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 3,
+			"isSaved": true
+		}
+	],
+	"logicOutput": [
+		{
+			"value": false,
+			"posX": 1236.1999969482422,
+			"posY": 245,
+			"diameter": 25,
+			"isSpawned": true,
+			"isMoving": false,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"nodeStartID": 101,
+			"isSaved": true
+		}
+	],
+	"flipflop": [],
+	"logicClock": [],
+	"gate": [
+		{
+			"strType": "NOT",
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 429.1999969482422,
+			"posY": 80,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 4
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 432.1999969482422,
+			"posY": 209,
+			"isSpawned": true,
+			"offsetMouseX": -2,
+			"offsetMouseY": -37,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 6
+		},
+		{
+			"strType": "NOT",
+			"type": 1,
+			"width": 100,
+			"height": 50,
+			"posX": 424.1999969482422,
+			"posY": 333,
+			"isSpawned": true,
+			"offsetMouseX": -4,
+			"offsetMouseY": -29,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 9
+		},
+		{
+			"strType": "NAND",
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 685.1999969482422,
+			"posY": 85,
+			"isSpawned": true,
+			"offsetMouseX": -2,
+			"offsetMouseY": -13,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 11
+		},
+		{
+			"strType": "NAND",
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 687.1999969482422,
+			"posY": 168,
+			"isSpawned": true,
+			"offsetMouseX": -4,
+			"offsetMouseY": -36,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 14
+		},
+		{
+			"strType": "NAND",
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 682.1999969482422,
+			"posY": 259,
+			"isSpawned": true,
+			"offsetMouseX": -94,
+			"offsetMouseY": -24,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 17
+		},
+		{
+			"strType": "NAND",
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 677.1999969482422,
+			"posY": 344,
+			"isSpawned": true,
+			"offsetMouseX": -1,
+			"offsetMouseY": -39,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 20
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 890.1999969482422,
+			"posY": 157,
+			"isSpawned": true,
+			"offsetMouseX": -3,
+			"offsetMouseY": -19,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 23
+		},
+		{
+			"strType": "AND",
+			"type": 2,
+			"width": 100,
+			"height": 50,
+			"posX": 889.1999969482422,
+			"posY": 286,
+			"isSpawned": true,
+			"offsetMouseX": -1,
+			"offsetMouseY": -15,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 26
+		},
+		{
+			"strType": "NAND",
+			"type": 3,
+			"width": 100,
+			"height": 50,
+			"posX": 1045.1999969482422,
+			"posY": 222,
+			"isSpawned": true,
+			"offsetMouseX": -1,
+			"offsetMouseY": -36,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 29
+		},
+		{
+			"strType": "sa1",
+			"type": 8,
+			"width": 120,
+			"height": 74,
+			"posX": 784.1999969482422,
+			"posY": 213,
+			"isSpawned": true,
+			"offsetMouseX": 0,
+			"offsetMouseY": 0,
+			"isMoving": false,
+			"isSaved": true,
+			"nodeStartID": 130
+		}
+	],
+	"srLatch": [],
+	"wire": [
+		{
+			"startID": 0,
+			"endID": 4,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 6,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 7,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 3,
+			"endID": 9,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 5,
+			"endID": 11,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 1,
+			"endID": 12,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 8,
+			"endID": 15,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 0,
+			"endID": 14,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 8,
+			"endID": 17,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 3,
+			"endID": 18,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 10,
+			"endID": 21,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 2,
+			"endID": 20,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 13,
+			"endID": 23,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 16,
+			"endID": 24,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 22,
+			"endID": 27,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 25,
+			"endID": 29,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 28,
+			"endID": 30,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 31,
+			"endID": 101,
+			"endX": 238.1999969482422,
+			"endY": -34,
+			"width": 8
+		},
+		{
+			"startID": 19,
+			"endID": 130,
+			"endX": 783.1999969482422,
+			"endY": 252,
+			"width": 8
+		},
+		{
+			"startID": 131,
+			"endID": 26,
+			"endX": 905.1999969482422,
+			"endY": 254,
+			"width": 8
+		}
+	]
+}
