@@ -15,7 +15,7 @@ def index():
 def SomeFunction():
     print('In SomeFunction')
     result = generatenetlist.generate_netlist()
-    return render_template('index.html', result=result)
+    return render_template('result.html', result=result)
 
 if __name__ == '__main__':
     app.run(debug=True)

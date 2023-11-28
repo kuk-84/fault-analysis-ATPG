@@ -478,6 +478,7 @@ with open(file_path, 'r') as file:
     Fault_Location = file.readline().strip()
 FL = 0;
 FV = Fault_Value
+
 print ('Fault Location', Fault_Location)
 print ('Fault Value', FV)
 #print (' ')

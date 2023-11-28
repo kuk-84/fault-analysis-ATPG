@@ -1,6 +1,5 @@
 Fault is detectable
 Primary Input values are:
+Node in2 0
 Node in1 x
-Node in2 x
-Node in3 0
-Node in4 0
+Node in3 1

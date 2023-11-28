@@ -157,7 +157,7 @@
 				</div> -->
 				<!-- Simulator Canvas -->
 				<div id="canvas-sim"></div>
-				<div id="resultSection" style="display: none;">
+				<!--<div id="resultSection" style="display: none;">
 					<p id="resultContent">
 						<div id="result">
 							{{ result }}
@@ -165,9 +165,9 @@
 					
 						<h2>Displayed in Table</h2>
 						<table id="resultTable">
-							<!-- Table headers will be generated here -->
+							
 							<tbody>
-								<!-- Table content will be generated here -->
+								
 							</tbody>
 						</table>
 					
@@ -190,11 +190,11 @@
 							});
 						</script>
 					</p>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</div>
-	<script>
+	<!-- <script>
 		document.addEventListener('DOMContentLoaded', function() {
 			var canvasSim = document.getElementById('canvas-sim');
 			var resultSection = document.getElementById('resultSection');
@@ -208,14 +208,14 @@
 	
 				// Call the server-side function '/SomeFunction'
 				// Update 'resultContent' with the received result
-				$.getJSON('/SomeFunction', {}, function(data) {
-					if (data.result) {
-						resultContent.innerText = data.result;
-					}
-				});
+				// $.getJSON('/SomeFunction', {}, function(data) {
+				// 	if (data.result) {
+				// 		resultContent.innerText = data.result;
+				// 	}
+				// });
 			});
 		});
-	</script>
+	</script> -->
 <script>
 	function ExecPythonCommand(pythonCommand){
     var request = new XMLHttpRequest()

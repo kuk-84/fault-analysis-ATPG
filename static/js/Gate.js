@@ -100,7 +100,7 @@ export class Gate {
             stroke(colorMouseOver[0], colorMouseOver[1], colorMouseOver[2]);
             rect(this.posX, this.posY, this.width, this.height);
         }
-        circle(this.posX, this.posY, this.diameter);
+        //circle(this.posX, this.posY, this.diameter);
         image(gateIMG[this.type], this.posX, this.posY);
 
         for (let i = 0; i < this.input.length; i++)
